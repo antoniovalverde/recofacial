@@ -89,7 +89,7 @@ function App() {
 
   const onSubmit = () => {
     //fetch(`https://api.clarifai.com/v2/models/face-detection/versions/6dc7e46bc9124c5c8824be4822abe105/outputs`, requestOptions)
-    fetch('http://localhost:3001/imageurl', {
+    fetch('https://mybackend-m38p.onrender.com/imageurl', {
       method: 'post',
       headers:{'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -99,7 +99,7 @@ function App() {
     .then(response => response.json())
     .then(fg => {
       if(fg) {
-        fetch('http://localhost:3001/image', {
+        fetch('https://mybackend-m38p.onrender.com/image', {
           method:'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
